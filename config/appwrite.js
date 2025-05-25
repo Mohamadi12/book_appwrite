@@ -1,11 +1,11 @@
-import { Client, Databases, Account, Storage } from "appwrite";
+import { Client, Databases, Account, Storage } from "node-appwrite";
 
 // Admin Client
 const createAdminClient = async () => {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT)
-    .setKey(process.env.APPWRITE_API_KEY); // Use environment variables for sensitive data like API keys and secrets
+    .setKey(process.env.NEXT_APPWRITE_KEY); // Use environment variable for admin key
 
   return {
     get account() {
