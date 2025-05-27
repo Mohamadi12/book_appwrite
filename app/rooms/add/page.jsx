@@ -1,13 +1,12 @@
 "use client";
-import { useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useActionState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Heading from "@/components/Heading";
 import createRoom from "@/app/actions/createRoom";
 
 const AddRoomPage = () => {
-  const [state, formAction] = useFormState(createRoom, {});
+  const [state, formAction] = useActionState(createRoom, {});
 
   const router = useRouter();
 
