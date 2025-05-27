@@ -7,7 +7,8 @@ import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 
 async function deleteRoom(roomId) {
-  const sessionCookie = cookies().get('appwrite-session');
+  const cookieStore = await cookies()
+  const sessionCookie = cookieStore.get('appwrite-session');
   if (!sessionCookie) {
     redirect('/login');
   }
